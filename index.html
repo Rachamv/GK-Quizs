@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Quiz API - A JSON API for Technical Quizzes</title>
+    <meta
+      name="Description"
+      content="Test your knowledge or easily embed a quiz on your website with the Quiz API"
+    />
+    <meta
+      name="keywords"
+      content="quiz, quizapi, test, bash quiz, linux quiz, php quiz, tech quiz, interview questions, html quiz, docker quiz, kubernetes quiz"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:image" content="images/QuziApi_Logo_Dark.png" />
+    <meta
+      property="og:title"
+      content="Quiz API - A JSON API for technical quzzes"
+    />
+    <meta
+      property="og:description"
+      content="Test your knowledge or easily embed a quiz on your website with the Quiz API"
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="quizapi.io" />
+    <meta name="twitter:title" content="Quiz API" />
+    <meta
+      name="twitter:description"
+      content="Test your knowledge or easily embed a quiz on your website with the Quiz API"
+    />
+    <meta
+      name="twitter:image"
+      content="https://quizapi.io/storage/QuziApi_Logo_Dark.png"
+    />
+
+    <!-- CSS Files
+    ================================================== -->
+    <!-- Styles -->
+    <link href="css/page.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/choices.css" />
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      href="settings/March2020/H8dOZWtQD0IND4pqOJTT.png"
+    />
+    <link rel="icon" href="images/H8dOZWtQD0IND4pqOJTT.png" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light navbar-stick-dark"
+      data-navbar="sticky"
+    >
+      <div class="container">
+        <div class="navbar-left">
+          <button class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="/">
+            <img
+              class="logo-dark"
+              src="images/QuziApi_Logo_Dark.png"
+              alt="Quiz API Dark Logo"
+            />
+            <img
+              class="logo-light"
+              src="images/QuizApi_Logo_White.png"
+              alt="Quiz API White Logo"
+            />
+          </a>
+        </div>
+
+        <section class="navbar-mobile">
+          <nav class="nav nav-navbar ml-auto">
+            <a class="nav-link" href="https://quizapi.io/features">Features</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">API <span class="arrow"></span></a>
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="/docs">Get started</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Demo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://quizapi.io/categories"
+                    >Categories</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/docs">Documentation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://quizapi.io/api-config"
+                    >API URL Generator</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Quiz <span class="arrow"></span></a>
+              <ul class="nav">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="https://quizapi.io/predefined-quizzes"
+                    >Predefined Quizzes</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="https://quizapi.io/clientarea/quiz/pick"
+                    >Random Quizzes</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <a class="nav-link" href="https://quizapi.io/contact">Contact</a>
+            <a class="nav-link" href="https://quizapi.io/contribute"
+              >Contribute</a
+            >
+          </nav>
+
+          <span class="navbar-divider" style="opacity: 1"></span>
+          <div>
+            <a
+              class="btn btn-sm btn-round btn-success ml-lg-4 mr-2"
+              href="https://quizapi.io/login"
+              >Sign in</a
+            >
+            <a
+              class="btn btn-sm btn-round btn-outline-success"
+              href="https://quizapi.io/register"
+              >Sign up</a
+            >
+          </div>
+        </section>
+      </div>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Header -->
+    <header
+      id="home"
+      class="header text-white h-fullscreen text-center text-lg-left"
+      style="background-color: #24292e"
+    >
+      <canvas class="constellation" data-color="rgba(255,255,255,0.3)"></canvas>
+      <div class="container">
+        <div class="row align-items-center h-100">
+          <div class="col-lg-6">
+            <h3>
+              The QuizAPI includes a wide number of
+              <span
+                class="text-success"
+                data-typing="Linux, DevOps, BASH, PHP, Python, Cloud, Tech"
+                data-back-speed="100"
+              ></span>
+              questions
+            </h3>
+            <p class="lead mt-5 mb-8">
+              Test your knowledge or easily embed a quiz on your website with
+              the Quiz API
+            </p>
+            <p class="gap-xy">
+              <a
+                class="btn btn-round btn-outline-success"
+                href="https://quizapi.io/predefined-quizzes"
+                ><label class="small">Take a Quiz</label></a
+              >
+              <a class="btn btn-round btn-info" href="/docs"
+                ><label class="small">API Documentation</label></a
+              >
+            </p>
+          </div>
+          <div class="col-lg-6 ml-auto">
+            <img
+              class="mt-5"
+              src="images/laptop-quizapi.png"
+              alt="Quiz API Website"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /.header -->
+
+    <!-- What is it all about -->
+    <section id="learnMore" class="section overflow-hidden py-lg-10 bg-gray">
+      <div class="container-fluid pr-lg-0">
+        <div class="row gap-y">
+          <div class="col-10 col-lg-6 mx-auto text-center text-lg-left">
+            <h2>What is it all about?</h2>
+            <p class="lead">
+              The <strong>QuizAPI</strong> is a SaaS which lets you test your
+              knowledge on a wide variety of technical topics. You can create
+              your own Quiz or get random set of questions for a speicifc topic
+              including Linux, DevOps, BASH, PHP and lots more. We offer an easy
+              to use API which allows you to embed the quiz on your own website.
+            </p>
+
+            <br />
+
+            <div class="row gap-y">
+              <div class="col-md-6">
+                <i class="fa fa-wrench text-success lead-4 mb-5"></i>
+                <h6 class="text-uppercase mb-3">Customizable</h6>
+                <p class="fs-14">Create your own Quiz.</p>
+              </div>
+
+              <div class="col-md-6">
+                <i class="fa fa-tv text-success lead-4 mb-5"></i>
+                <h6 class="text-uppercase mb-3">Responsive</h6>
+                <p class="fs-14">Create your own Quiz wrapper.</p>
+              </div>
+
+              <div class="col-md-6">
+                <i class="fa fa-code text-success lead-4 mb-5"></i>
+                <h6 class="text-uppercase mb-3">Clean</h6>
+                <p class="fs-14">Easy to use API.</p>
+              </div>
+
+              <div class="col-md-6">
+                <i class="fa fa-file-text-o text-success lead-4 mb-5"></i>
+                <h6 class="text-uppercase mb-3">Documented</h6>
+                <p class="fs-14">Fully documented API.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 align-self-center">
+            <img
+              class="shadow-3"
+              src="images/api.svg"
+              alt="Quiz API"
+              data-aos="slide-left"
+              data-aos-duration="1500"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Topics Section -->
+    <section id="topics" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Our Top Topics</h2>
+          <hr />
+          <p class="lead">
+            Test your skills with our top topics with a variaty of questions set
+            for beginners and seniors alike!
+          </p>
+        </header>
+
+        <div class="row gap-y">
+          <div class="col-md-6 col-lg-3">
+            <a
+              class="card text-white text-center bg-img py-6"
+              data-toggle="modal"
+              data-target="#signInModal-WordPress"
+              style="background-image: url(images/LUygVKKNhVBVRlwNmLPJ.jpg)"
+              data-overlay="7"
+              name="WordPress"
+              alt="Quiz API WordPress"
+            >
+              <div class="position-relative">
+                <p><i class="fab fa-wordpress lead-5 opacity-70"></i></p>
+                <h5 class="mb-0">WordPress</h5>
+                <small class="opacity-70">66 Questions</small>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a
+              class="card text-white text-center bg-img py-6"
+              data-toggle="modal"
+              data-target="#signInModal-Docker"
+              style="background-image: url(images/tihRrer2wU1eihlwHSXr.jpg)"
+              data-overlay="7"
+              name="Docker"
+              alt="Quiz API Docker"
+            >
+              <div class="position-relative">
+                <p><i class="fab fa-docker lead-5 opacity-70"></i></p>
+                <h5 class="mb-0">Docker</h5>
+                <small class="opacity-70">125 Questions</small>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a
+              class="card text-white text-center bg-img py-6"
+              data-toggle="modal"
+              data-target="#signInModal-MySQL"
+              style="background-image: url(images/QaxvuS4XUSUImsuYGzb2.jpg)"
+              data-overlay="7"
+              name="MySQL"
+              alt="Quiz API MySQL"
+            >
+              <div class="position-relative">
+                <p><i class="fas fa-database lead-5 opacity-70"></i></p>
+                <h5 class="mb-0">MySQL</h5>
+                <small class="opacity-70">153 Questions</small>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a
+              class="card text-white text-center bg-img py-6"
+              data-toggle="modal"
+              data-target="#signInModal-JavaScript"
+              style="background-image: url(images/o4ahLHmk4jwCrwh63Lyu.png)"
+              data-overlay="7"
+              name="JavaScript"
+              alt="Quiz API JavaScript"
+            >
+              <div class="position-relative">
+                <p><i class="fab fa-js lead-5 opacity-70"></i></p>
+                <h5 class="mb-0">JavaScript</h5>
+                <small class="opacity-70">25 Questions</small>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a
+              class="card text-white text-center bg-img py-6"
+              data-toggle="modal"
+              data-target="#signInModal-PHP"
+              style="background-image: url(images/AVhzCCNLb7mlFnjC9kQZ.jpeg)"
+              data-overlay="7"
+              name="PHP"
+              alt="Quiz API PHP"
+            >
+              <div class="position-relative">
+                <p><i class="fab fa-php lead-5 opacity-70"></i></p>
+                <h5 class="mb-0">PHP</h5>
+                <small class="opacity-70">181 Questions</small>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a
+              class="card text-white text-center bg-img py-6"
+              data-toggle="modal"
+              data-target="#signInModal-BASH"
+              style="background-image: url(images/PV9mMjSKqMy1qrTSNr1S.jpg)"
+              data-overlay="7"
+              name="BASH"
+              alt="Quiz API BASH"
+            >
+              <div class="position-relative">
+                <p><i class="fas fa-terminal lead-5 opacity-70"></i></p>
+                <h5 class="mb-0">BASH</h5>
+                <small class="opacity-70">77 Questions</small>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a
+              class="card text-white text-center bg-img py-6"
+              data-toggle="modal"
+              data-target="#signInModal-Laravel"
+              style="background-image: url(images/nqpV0lwwcD8GNA0umF4A.jpg)"
+              data-overlay="7"
+              name="Laravel"
+              alt="Quiz API Laravel"
+            >
+              <div class="position-relative">
+                <p><i class="fab fa-laravel lead-5 opacity-70"></i></p>
+                <h5 class="mb-0">Laravel</h5>
+                <small class="opacity-70">10 Questions</small>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <a
+              class="card text-white text-center bg-img py-6"
+              data-toggle="modal"
+              data-target="#signInModal-HTML"
+              style="background-image: url(images/kEEwOFhlkEoYBfIpnFdP.jpg)"
+              data-overlay="7"
+              name="HTML"
+              alt="Quiz API HTML"
+            >
+              <div class="position-relative">
+                <p><i class="fab fa-html5 lead-5 opacity-70"></i></p>
+                <h5 class="mb-0">HTML</h5>
+                <small class="opacity-70">139 Questions</small>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="section text-white py-8"
+      style="
+        background-image: linear-gradient(
+          90deg,
+          rgba(48, 224, 109, 1) 4%,
+          rgba(43, 223, 153, 1) 17%,
+          rgba(55, 210, 176, 1) 36%,
+          rgba(55, 200, 210, 1) 56%,
+          rgba(121, 87, 162, 1) 92%
+        );
+      "
+    >
+      <div class="container">
+        <header class="section-header">
+          <small><strong>Get a taste of it</strong></small>
+          <h2 class="display-3 fw-400">
+            Try it out <span class="mark-underline">Now</span>
+          </h2>
+          <hr />
+          <p class="lead-2">
+            If you want to use all of the available features create a an account
+            with us or login to the one you already have
+          </p>
+        </header>
+
+        <p class="text-center">
+          <a
+            class="btn btn-xl btn-round btn-light w-250"
+            href="https://quizapi.io/login"
+            >Login <span class="pl-2"></span></a
+          ><br />
+        </p>
+      </div>
+    </section>
+    <section class="section overflow-hidden">
+      <div class="container">
+        <header class="section-header">
+          <h2>Predifined Quizzes</h2>
+          <hr />
+          <p>
+            Get a taste our predifed quizzes containing the most relevant
+            questions for interviews, jobs etc.
+          </p>
+        </header>
+
+        <div data-provide="shuffle">
+          <nav class="nav nav-center nav-pills mb-7" data-shuffle="filter">
+            <a class="nav-link active" href="#" data-shuffle="button">All</a>
+            <a
+              class="nav-link"
+              href="#"
+              data-shuffle="button"
+              data-group="DevOps"
+              >DevOps</a
+            >
+            <a
+              class="nav-link"
+              href="#"
+              data-shuffle="button"
+              data-group="Laravel"
+              >Laravel</a
+            >
+            <a class="nav-link" href="#" data-shuffle="button" data-group="HTML"
+              >HTML</a
+            >
+            <a
+              class="nav-link"
+              href="#"
+              data-shuffle="button"
+              data-group="Linux"
+              >Linux</a
+            >
+            <a
+              class="nav-link"
+              href="#"
+              data-shuffle="button"
+              data-group="Docker"
+              >Docker</a
+            >
+            <a
+              class="nav-link"
+              href="#"
+              data-shuffle="button"
+              data-group="JavaScript"
+              >JavaScript</a
+            >
+          </nav>
+
+          <div class="row gap-y gap-2" data-shuffle="list">
+            <div
+              class="col-6 col-lg-3"
+              data-shuffle="item"
+              data-groups="DevOps,"
+            >
+              <a
+                class="row no-gutters pricing-4 popular"
+                href="https://quizapi.io/predefined-quizzes/search-results-web-results-ansible-quiz-beginner-level"
+              >
+                <div class="plan-description col-md-12 pt-4 pb-1">
+                  <h6>
+                    Search Results Web results Ansible quiz beginner level
+                  </h6>
+                  <p class="mb-0"></p>
+                  <p class="mb-0 small">
+                    Tags:
+                    <code> DevOps </code>
+                    Usage:
+                    <code> 2845 </code>
+                  </p>
+                  <p></p>
+                </div>
+              </a>
+            </div>
+            <div
+              class="col-6 col-lg-3"
+              data-shuffle="item"
+              data-groups="Laravel,"
+            >
+              <a
+                class="row no-gutters pricing-4 popular"
+                href="https://quizapi.io/predefined-quizzes/10-simple-laravel-interview-questions"
+              >
+                <div class="plan-description col-md-12 pt-4 pb-1">
+                  <h6>10 Simple Laravel Interview Questions</h6>
+                  <p class="mb-0"></p>
+                  <p class="mb-0 small">
+                    Tags:
+                    <code> Laravel </code>
+                    Usage:
+                    <code> 3458 </code>
+                  </p>
+                  <p></p>
+                </div>
+              </a>
+            </div>
+            <div
+              class="col-6 col-lg-3"
+              data-shuffle="item"
+              data-groups="DevOps,"
+            >
+              <a
+                class="row no-gutters pricing-4 popular"
+                href="https://quizapi.io/predefined-quizzes/ansible-playbooks-quiz"
+              >
+                <div class="plan-description col-md-12 pt-4 pb-1">
+                  <h6>Ansible playbooks quiz</h6>
+                  <p class="mb-0"></p>
+                  <p class="mb-0 small">
+                    Tags:
+                    <code> DevOps </code>
+                    Usage:
+                    <code> 8269 </code>
+                  </p>
+                  <p></p>
+                </div>
+              </a>
+            </div>
+            <div
+              class="col-6 col-lg-3"
+              data-shuffle="item"
+              data-groups="DevOps,"
+            >
+              <a
+                class="row no-gutters pricing-4 popular"
+                href="https://quizapi.io/predefined-quizzes/ansible-ad-hoc-commands-quiz"
+              >
+                <div class="plan-description col-md-12 pt-4 pb-1">
+                  <h6>Ansible ad-hoc commands quiz</h6>
+                  <p class="mb-0"></p>
+                  <p class="mb-0 small">
+                    Tags:
+                    <code> DevOps </code>
+                    Usage:
+                    <code> 2339 </code>
+                  </p>
+                  <p></p>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-lg-3" data-shuffle="item" data-groups="HTML,">
+              <a
+                class="row no-gutters pricing-4 popular"
+                href="https://quizapi.io/predefined-quizzes/common-html-interview-questions"
+              >
+                <div class="plan-description col-md-12 pt-4 pb-1">
+                  <h6>Common HTML Interview Questions</h6>
+                  <p class="mb-0"></p>
+                  <p class="mb-0 small">
+                    Tags:
+                    <code> HTML </code>
+                    Usage:
+                    <code> 6869 </code>
+                  </p>
+                  <p></p>
+                </div>
+              </a>
+            </div>
+            <div
+              class="col-6 col-lg-3"
+              data-shuffle="item"
+              data-groups="Linux,"
+            >
+              <a
+                class="row no-gutters pricing-4 popular"
+                href="https://quizapi.io/predefined-quizzes/top-10-common-interview-linux-questions"
+              >
+                <div class="plan-description col-md-12 pt-4 pb-1">
+                  <h6>Top 10 Common Interview Linux Questions</h6>
+                  <p class="mb-0"></p>
+                  <p class="mb-0 small">
+                    Tags:
+                    <code> Linux </code>
+                    Usage:
+                    <code> 2959 </code>
+                  </p>
+                  <p></p>
+                </div>
+              </a>
+            </div>
+            <div
+              class="col-6 col-lg-3"
+              data-shuffle="item"
+              data-groups="Docker,"
+            >
+              <a
+                class="row no-gutters pricing-4 popular"
+                href="https://quizapi.io/predefined-quizzes/basic-dockerfile-quiz"
+              >
+                <div class="plan-description col-md-12 pt-4 pb-1">
+                  <h6>Basic Dockerfile Quiz</h6>
+                  <p class="mb-0"></p>
+                  <p class="mb-0 small">
+                    Tags:
+                    <code> Docker </code>
+                    Usage:
+                    <code> 3566 </code>
+                  </p>
+                  <p></p>
+                </div>
+              </a>
+            </div>
+            <div
+              class="col-6 col-lg-3"
+              data-shuffle="item"
+              data-groups="JavaScript,"
+            >
+              <a
+                class="row no-gutters pricing-4 popular"
+                href="https://quizapi.io/predefined-quizzes/javascript-essentials-everybody-should-know"
+              >
+                <div class="plan-description col-md-12 pt-4 pb-1">
+                  <h6>JavaScript, essentials everybody should know</h6>
+                  <p class="mb-0"></p>
+                  <p class="mb-0 small">
+                    Tags:
+                    <code> JavaScript </code>
+                    Usage:
+                    <code> 8432 </code>
+                  </p>
+                  <p></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="container">
+          <div class="text-center lead">
+            <p>
+              If you want to check out all of our Predifined Quizzes
+              <span class="mark-underline"
+                ><a href="https://quizapi.io/predefined-quizzes "
+                  >click here</a
+                ></span
+              >
+              to see them all.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="newsletter"
+      class="section text-white py-10"
+      style="background-image: url(images/Newsletter.jpeg)"
+      data-overlay="6"
+    >
+      <div class="container text-center">
+        <h2>Stay Tuned</h2>
+        <br />
+        <p class="lead">
+          Subscribe to our newsletter and receive the latest news from QuzApi.
+        </p>
+        <div id="" class="row mt-8">
+          <form
+            class="col-md-8 col-xl-6 input-glass input-round mx-auto"
+            method="post"
+            action="https://quizapi.io/newsletter"
+            target="_blank"
+          >
+            <input
+              type="hidden"
+              name="_token"
+              value="4v3i7z9oqr52bdfPv4txnhmcbWmh4XGOMpzGGEWy"
+            />
+            <div
+              class="title-block lead"
+              id="subscribe-success"
+              style="display: none"
+            >
+              Thanks for subscribing, an e-mail has been sent for confirmation!
+            </div>
+            <div class="input-group input-group-lg" id="subscribe">
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="fa fa-envelope"></i
+                ></span>
+              </div>
+              <input
+                type="email"
+                id="news_email"
+                name="news_email"
+                class="form-control"
+                placeholder="Email Address"
+              />
+              <span class="input-group-append">
+                <button
+                  type="submit"
+                  class="btn btn-success"
+                  id="newsletterForm"
+                  name="submitNewsletter"
+                >
+                  Subscribe
+                </button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-gray py-7">
+      <div class="container">
+        <div class="row gap-y">
+          <div class="col-6 col-lg-4">
+            <a href="/"
+              ><img
+                class=""
+                src="images/H8dOZWtQD0IND4pqOJTT.png"
+                alt="Quiz API Logo"
+            /></a>
+          </div>
+
+          <div class="col-6 col-md-3 col-xl-2">
+            <h6 class="mb-4 mt-1"><strong>Company</strong></h6>
+            <div class="nav flex-column">
+              <a class="nav-link" href="https://quizapi.io/features"
+                >Features</a
+              >
+              <a href="https://quizapi.io/terms" class="nav-link">Terms</a>
+              <a href="https://quizapi.io/privacy" class="nav-link"
+                >Privacy Policy</a
+              >
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 col-xl-2">
+            <h6 class="mb-4 mt-1"><strong>Product</strong></h6>
+            <div class="nav flex-column">
+              <a class="nav-link" href="/docs">API</a>
+              <a class="nav-link" href="https://quizapi.io/categories"
+                >Quizzes</a
+              >
+              <a class="nav-link" href="#">Demo</a>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-6 col-xl-2">
+            <h6 class="mb-4 mt-1"><strong>Support</strong></h6>
+            <div class="nav flex-column">
+              <a class="nav-link" href="https://quizapi.io/contact"
+                >Contact us</a
+              >
+              <a class="nav-link" href="https://quizapi.io/contribute"
+                >Get Involved</a
+              >
+              <a class="nav-link" href="/docs">Documentation</a>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-6 col-xl-2 text-center">
+            <p>
+              <a
+                class="btn btn-block btn-round btn-success"
+                href="https://quizapi.io/clientarea/settings/token"
+                >Get API Token</a
+              >
+            </p>
+            <br />
+            <div class="social social-bordered">
+              <a
+                class="social-facebook"
+                href="https://www.facebook.com/quizapi.io"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a class="social-twitter" href="https://twitter.com/quizapi_io"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                class="social-instagram"
+                href="https://www.instagram.com/quizapi.io"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/d492b19e5d.js" crossorigin="anonymous"></script>
+    <script src="js/page.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script
+      type="text/javascript"
+      id="cookieinfo"
+      src="js/cookieinfo.min.js"
+      data-bg="#3cd458"
+      data-fg="#FFFFFF"
+      data-link="#fff"
+      data-divlinkbg="#fff"
+      data-cookie="CookieInfoScript"
+      data-message="We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies"
+      data-linkmsg="Learn more"
+      data-moreinfo="https://quizapi.io/privacy"
+      data-text-align="left"
+      data-close-text="Agree!"
+    ></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=UA-71191054-24"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-71191054-24");
+    </script>
+
+    <!-- Subscribe AJAX -->
+    <script>
+      jQuery(document).ready(function () {
+        jQuery("#newsletterForm").click(function (e) {
+          e.preventDefault();
+          $.ajaxSetup({
+            headers: {
+              "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+            },
+          });
+          jQuery.ajax({
+            url: "https://quizapi.io/newsletter",
+            method: "post",
+            data: {
+              _token: "4v3i7z9oqr52bdfPv4txnhmcbWmh4XGOMpzGGEWy",
+              news_email: jQuery("#news_email").val(),
+            },
+            success: function (result) {
+              $("#subscribe-success").show();
+              $("#subscribe").css("display", "none");
+              $("#subscribe-success2").show();
+              $("#subscribe2").css("display", "none");
+            },
+          });
+        });
+      });
+    </script>
+
+    <div
+      class="modal fade"
+      id="signInModal-WordPress"
+      tabindex="-1"
+      role="dialog"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div
+          class="modal-content bg-img bg-img-bottom"
+          style="background-image: url(images/contributeImage2.jpeg)"
+        >
+          <div class="modal-body text-white">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+            <div class="row">
+              <div class="col-md-8 ml-auto">
+                <form class="input-glass p-5 p-md-7">
+                  <h2>Hello there!</h2>
+                  <p class="lead-1">Take advantage of our free quizzes!</p>
+                  <p>
+                    We urge you to take them as a
+                    <strong>registered user</strong>. You will get access to a
+                    lot more questions and all results will be tied up to your
+                    profile!
+                  </p>
+                  <hr class="w-10" />
+                  <div class="input-group input-group-lg">
+                    <a
+                      href="https://quizapi.io/clientarea/quiz/free/WordPress"
+                      class="btn btn-round btn-lg1 btn-outline-info"
+                      >Login</a
+                    >
+                    <div class="pl-3 text-right">
+                      <a
+                        href="https://quizapi.io/predefined-quizzes"
+                        class="btn btn-round btn-lg1 btn-success"
+                        >Free Quizzes</a
+                      >
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="signInModal-Docker" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div
+          class="modal-content bg-img bg-img-bottom"
+          style="background-image: url(images/contributeImage2.jpeg)"
+        >
+          <div class="modal-body text-white">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+            <div class="row">
+              <div class="col-md-8 ml-auto">
+                <form class="input-glass p-5 p-md-7">
+                  <h2>Hello there!</h2>
+                  <p class="lead-1">Take advantage of our free quizzes!</p>
+                  <p>
+                    We urge you to take them as a
+                    <strong>registered user</strong>. You will get access to a
+                    lot more questions and all results will be tied up to your
+                    profile!
+                  </p>
+                  <hr class="w-10" />
+                  <div class="input-group input-group-lg">
+                    <a
+                      href="https://quizapi.io/clientarea/quiz/free/Docker"
+                      class="btn btn-round btn-lg1 btn-outline-info"
+                      >Login</a
+                    >
+                    <div class="pl-3 text-right">
+                      <a
+                        href="https://quizapi.io/predefined-quizzes"
+                        class="btn btn-round btn-lg1 btn-success"
+                        >Free Quizzes</a
+                      >
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="signInModal-MySQL" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div
+          class="modal-content bg-img bg-img-bottom"
+          style="background-image: url(images/contributeImage2.jpeg)"
+        >
+          <div class="modal-body text-white">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+            <div class="row">
+              <div class="col-md-8 ml-auto">
+                <form class="input-glass p-5 p-md-7">
+                  <h2>Hello there!</h2>
+                  <p class="lead-1">Take advantage of our free quizzes!</p>
+                  <p>
+                    We urge you to take them as a
+                    <strong>registered user</strong>. You will get access to a
+                    lot more questions and all results will be tied up to your
+                    profile!
+                  </p>
+                  <hr class="w-10" />
+                  <div class="input-group input-group-lg">
+                    <a
+                      href="https://quizapi.io/clientarea/quiz/free/MySQL"
+                      class="btn btn-round btn-lg1 btn-outline-info"
+                      >Login</a
+                    >
+                    <div class="pl-3 text-right">
+                      <a
+                        href="https://quizapi.io/predefined-quizzes"
+                        class="btn btn-round btn-lg1 btn-success"
+                        >Free Quizzes</a
+                      >
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="signInModal-JavaScript"
+      tabindex="-1"
+      role="dialog"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div
+          class="modal-content bg-img bg-img-bottom"
+          style="background-image: url(images/contributeImage2.jpeg)"
+        >
+          <div class="modal-body text-white">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+            <div class="row">
+              <div class="col-md-8 ml-auto">
+                <form class="input-glass p-5 p-md-7">
+                  <h2>Hello there!</h2>
+                  <p class="lead-1">Take advantage of our free quizzes!</p>
+                  <p>
+                    We urge you to take them as a
+                    <strong>registered user</strong>. You will get access to a
+                    lot more questions and all results will be tied up to your
+                    profile!
+                  </p>
+                  <hr class="w-10" />
+                  <div class="input-group input-group-lg">
+                    <a
+                      href="https://quizapi.io/clientarea/quiz/free/JavaScript"
+                      class="btn btn-round btn-lg1 btn-outline-info"
+                      >Login</a
+                    >
+                    <div class="pl-3 text-right">
+                      <a
+                        href="https://quizapi.io/predefined-quizzes"
+                        class="btn btn-round btn-lg1 btn-success"
+                        >Free Quizzes</a
+                      >
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="signInModal-PHP" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div
+          class="modal-content bg-img bg-img-bottom"
+          style="background-image: url(images/contributeImage2.jpeg)"
+        >
+          <div class="modal-body text-white">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+            <div class="row">
+              <div class="col-md-8 ml-auto">
+                <form class="input-glass p-5 p-md-7">
+                  <h2>Hello there!</h2>
+                  <p class="lead-1">Take advantage of our free quizzes!</p>
+                  <p>
+                    We urge you to take them as a
+                    <strong>registered user</strong>. You will get access to a
+                    lot more questions and all results will be tied up to your
+                    profile!
+                  </p>
+                  <hr class="w-10" />
+                  <div class="input-group input-group-lg">
+                    <a
+                      href="https://quizapi.io/clientarea/quiz/free/PHP"
+                      class="btn btn-round btn-lg1 btn-outline-info"
+                      >Login</a
+                    >
+                    <div class="pl-3 text-right">
+                      <a
+                        href="https://quizapi.io/predefined-quizzes"
+                        class="btn btn-round btn-lg1 btn-success"
+                        >Free Quizzes</a
+                      >
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="signInModal-BASH" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div
+          class="modal-content bg-img bg-img-bottom"
+          style="background-image: url(images/contributeImage2.jpeg)"
+        >
+          <div class="modal-body text-white">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+            <div class="row">
+              <div class="col-md-8 ml-auto">
+                <form class="input-glass p-5 p-md-7">
+                  <h2>Hello there!</h2>
+                  <p class="lead-1">Take advantage of our free quizzes!</p>
+                  <p>
+                    We urge you to take them as a
+                    <strong>registered user</strong>. You will get access to a
+                    lot more questions and all results will be tied up to your
+                    profile!
+                  </p>
+                  <hr class="w-10" />
+                  <div class="input-group input-group-lg">
+                    <a
+                      href="https://quizapi.io/clientarea/quiz/free/BASH"
+                      class="btn btn-round btn-lg1 btn-outline-info"
+                      >Login</a
+                    >
+                    <div class="pl-3 text-right">
+                      <a
+                        href="https://quizapi.io/predefined-quizzes"
+                        class="btn btn-round btn-lg1 btn-success"
+                        >Free Quizzes</a
+                      >
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="signInModal-Laravel"
+      tabindex="-1"
+      role="dialog"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div
+          class="modal-content bg-img bg-img-bottom"
+          style="background-image: url(images/contributeImage2.jpeg)"
+        >
+          <div class="modal-body text-white">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+            <div class="row">
+              <div class="col-md-8 ml-auto">
+                <form class="input-glass p-5 p-md-7">
+                  <h2>Hello there!</h2>
+                  <p class="lead-1">Take advantage of our free quizzes!</p>
+                  <p>
+                    We urge you to take them as a
+                    <strong>registered user</strong>. You will get access to a
+                    lot more questions and all results will be tied up to your
+                    profile!
+                  </p>
+                  <hr class="w-10" />
+                  <div class="input-group input-group-lg">
+                    <a
+                      href="https://quizapi.io/clientarea/quiz/free/Laravel"
+                      class="btn btn-round btn-lg1 btn-outline-info"
+                      >Login</a
+                    >
+                    <div class="pl-3 text-right">
+                      <a
+                        href="https://quizapi.io/predefined-quizzes"
+                        class="btn btn-round btn-lg1 btn-success"
+                        >Free Quizzes</a
+                      >
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="signInModal-HTML" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div
+          class="modal-content bg-img bg-img-bottom"
+          style="background-image: url(images/contributeImage2.jpeg)"
+        >
+          <div class="modal-body text-white">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+            <div class="row">
+              <div class="col-md-8 ml-auto">
+                <form class="input-glass p-5 p-md-7">
+                  <h2>Hello there!</h2>
+                  <p class="lead-1">Take advantage of our free quizzes!</p>
+                  <p>
+                    We urge you to take them as a
+                    <strong>registered user</strong>. You will get access to a
+                    lot more questions and all results will be tied up to your
+                    profile!
+                  </p>
+                  <hr class="w-10" />
+                  <div class="input-group input-group-lg">
+                    <a
+                      href="https://quizapi.io/clientarea/quiz/free/HTML"
+                      class="btn btn-round btn-lg1 btn-outline-info"
+                      >Login</a
+                    >
+                    <div class="pl-3 text-right">
+                      <a
+                        href="https://quizapi.io/predefined-quizzes"
+                        class="btn btn-round btn-lg1 btn-success"
+                        >Free Quizzes</a
+                      >
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
